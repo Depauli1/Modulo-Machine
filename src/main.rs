@@ -26,7 +26,7 @@ fn main() {
 
     thread::spawn(move || {
         loop {
-            thread::sleep(Duration::from_secs(1)); // this actually simulates a clock signal every second
+            thread::sleep(Duration::from_secs(1)); // this simulates a clock signal every second
             let mut o_lock = o_clone.lock().unwrap();
             let x_lock = x_clone.lock().unwrap();
             let p_lock = p_clone.lock().unwrap();
