@@ -1,16 +1,16 @@
 # Modulo-Machine
 
 ## Description
-Rust-based program that effectively elucidates the concepts of multi-threading and modular arithmetic operations. This application underscores its functionality by employing high precision numerical operations using the num_bigint and num_traits crates, uniquely catering to your data computation needs.
+Rust-based program that effectively explains the concepts of multi-threading and modular arithmetic operations. This application underscores its functionality by employing high precision numerical operations using the num_bigint and num_traits crates, uniquely catering to your data computation needs.
 
 The core aspect of the project is the calculate_modulus function which handles arbitrary precision unsigned integer parameters x and p, performing a precise modulus operation on x with respect to p.
 
-At the heart of the program - the main function simultaneously encapsulates multiple functionalities:
+The main function simultaneously encapsulates multiple functionalities:
 
 It sets the x variable as a shared reference wrapped in a Mutex, holding a 300-bit number.
 The variable p is assigned a fixed massive value.
 It initializes o to 0 and encapsulates it within a Mutex.
-Boasting a unique feature, the program spawns a background thread running an infinite loop via thread::spawn. It cleverly simulates a clock signal every second and continually calculates the modulus of x, assigning the result to o. Simultaneously, the main acts as a watchdog for a 'reset' signaling mechanism.
+The program spawns a background thread running an infinite loop via thread::spawn. It cleverly simulates a clock signal every second and continually calculates the modulus of x, assigning the result to o. Simultaneously, the main acts as a watchdog for a 'reset' signaling mechanism.
 
 If a reset signal is detected, the system dynamically updates the values of x and p with the reset values. Mutexes are efficiently utilized to ensure concurrent yet safe access to shared data across threads.
 
